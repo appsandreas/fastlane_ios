@@ -1,23 +1,27 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
-
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
-
 default_platform(:ios)
 
 platform :ios do
-  desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
-  end
+    desc "Build the iOS application"
+    lane :build do
+        gym(
+            scheme: ENV["APP_SCHEME"],
+            export_method: "app-store"
+        )
+    desc "Sync certificates and provisioning profiles from the remote repository"
+    lane :sync_certificates do
+                match(
+            git_url: "https://github.com/yourusername/certificates.git",
+            type: "appstore"
+        )
+    desc "Deploy a new version to the App Store"
+    lane :release do
+        build
+    
+        upload_to_app_store(
+          username: ENV["APPLE_ID"],
+          skip_metadata: true, # Пропустить загрузку метаданных
+          skip_screenshots: true, # Пропустить загрузку скриншотов
+          force: true # Пропустить подтверждение перед загрузкой
+        )
+    end
 end
