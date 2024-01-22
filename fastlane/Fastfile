@@ -13,7 +13,8 @@ platform :ios do
         
         match(
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
-            type: "appstore"
+            type: "appstore",
+            match_password: "zn4rDZovFjfVIEp6OlVxIGrOkflEdd0jdqP87jT6zVlDuYYIPi"
         )
     end
 end
