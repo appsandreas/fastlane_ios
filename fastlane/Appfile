@@ -1,5 +1,5 @@
 # The bundle identifier of your app
-app_identifier("hdk.dkiepdo.projecttest")
+app_identifier(ENV["APP_BUNDLE"])
 
 # Your Apple Developer Portal username
 apple_id(ENV["APPLE_ID"])
