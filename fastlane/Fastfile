@@ -11,7 +11,10 @@ platform :ios do
             in_house: false #boolean value if team is Enterprise or not
         )
 
-        match(nuke: "appstore")
+        match_nuke(
+            git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
+            type: "appstore"
+        )
         
         match(
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
