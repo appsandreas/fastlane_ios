@@ -10,15 +10,15 @@ platform :ios do
             is_key_content_base64: true,
             in_house: false #boolean value if team is Enterprise or not
         )
-
-        update_code_signing_settings(
-          use_automatic_signing: true,
-          path: "./**/*.xcodeproj"
-        )
         
         match(
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
             type: "appstore"
+        )
+
+        update_code_signing_settings(
+          use_automatic_signing: true,
+          path: "./**/*.xcodeproj"
         )
 
         increment_build_number
