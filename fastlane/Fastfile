@@ -20,12 +20,7 @@ platform :ios do
 
         gym(
             scheme: ENV["APP_SCHEME"],
-            export_method: "app-store",
-            export_options: {
-                provisioningProfiles: { 
-                    ENV["APP_BUNDLE"] => "AppStore_#{ENV['APP_BUNDLE']}"
-                }
-            }
+            export_method: "app-store"
         )
         
         upload_to_app_store(
