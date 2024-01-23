@@ -15,5 +15,9 @@ platform :ios do
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
             type: "appstore"
         )
+
+        increment_build_number
+        cert
+        sigh(force: true)
     end
 end
