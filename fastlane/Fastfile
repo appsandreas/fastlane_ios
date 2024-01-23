@@ -28,10 +28,10 @@ platform :ios do
             export_method: "app-store"
         )
         
-        #upload_to_app_store(
-        #    skip_metadata: true, # Пропустить загрузку метаданных
-        #    skip_screenshots: true, # Пропустить загрузку скриншотов
-        #    force: true # Пропустить подтверждение перед загрузкой
-        #)
+        upload_to_app_store(
+            skip_metadata: true, # Пропустить загрузку метаданных
+            skip_screenshots: true, # Пропустить загрузку скриншотов
+            force: true # Пропустить подтверждение перед загрузкой
+        )
     end
 end
