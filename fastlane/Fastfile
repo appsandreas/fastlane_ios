@@ -14,14 +14,14 @@ platform :ios do
         match(
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
             force: true,
-            type: "development"
+            type: "appstore"
         )
 
         increment_build_number
 
         gym(
             scheme: ENV["APP_SCHEME"],
-            export_method: "development"
+            export_method: "app-store"
         )
         
         #upload_to_app_store(
