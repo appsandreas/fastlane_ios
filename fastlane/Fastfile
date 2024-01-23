@@ -13,7 +13,6 @@ platform :ios do
         
         match(
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
-            keychain_password: "zn4rDZovFjfVIEp6OlVxIGrOkflEdd0jdqP87jT6zVlDuYYIPi",
             type: "appstore"
         )
 
@@ -21,7 +20,12 @@ platform :ios do
 
         gym(
             scheme: ENV["APP_SCHEME"],
-            export_method: "app-store"
+            export_method: "app-store",
+            export_options: {
+                provisioningProfiles: { 
+                    ENV["APP_BUNDLE"] => "AppStore_#{ENV['APP_BUNDLE']}"
+                }
+            }
         )
         
         upload_to_app_store(
