@@ -13,6 +13,7 @@ platform :ios do
         
         match(
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
+            force: true,
             type: "appstore"
         )
 
