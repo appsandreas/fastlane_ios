@@ -16,7 +16,7 @@ platform :ios do
             type: "appstore"
         )
 
-	increment_build_number
+		increment_build_number
 
 		gym(
 			scheme: ENV["APP_SCHEME"],
