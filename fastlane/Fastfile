@@ -23,7 +23,7 @@ platform :ios do
         	export_method: "app-store",
 			export_options: {
             	provisioningProfiles: { 
-                	ENV["APP_BUNDLE"] => 45849eec-f3f1-475b-a104-69c5b0b720a0
+                	ENV["APP_BUNDLE"] => "45849eec-f3f1-475b-a104-69c5b0b720a0"
                 }
             }
         )
