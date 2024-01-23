@@ -13,7 +13,8 @@ platform :ios do
 
         match_nuke(
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
-            type: "appstore"
+            type: "appstore",
+            app_identifier: ENV["APP_BUNDLE"]
         )
         
         match(
