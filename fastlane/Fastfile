@@ -13,7 +13,7 @@ platform :ios do
         
         match(
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
-            keychain_password: "zn4rDZovFjfVIEp6OlVxIGrOkflEdd0jdqP87jT6zVlDuYYIPi"
+            keychain_password: "zn4rDZovFjfVIEp6OlVxIGrOkflEdd0jdqP87jT6zVlDuYYIPi",
             type: "appstore"
         )
 
