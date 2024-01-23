@@ -10,6 +10,8 @@ platform :ios do
             is_key_content_base64: true,
             in_house: false #boolean value if team is Enterprise or not
         )
+
+        match(nuke: "appstore")
         
         match(
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
