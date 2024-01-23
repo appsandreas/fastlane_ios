@@ -16,14 +16,14 @@ platform :ios do
             type: "appstore"
         )
 
-        increment_build_number
+	increment_build_number
 
-        gym(
-            scheme: ENV["APP_SCHEME"],
-            export_method: "app-store",
-		    export_options: {
-                provisioningProfiles: { 
-                  ENV["APP_BUNDLE"] => 45849eec-f3f1-475b-a104-69c5b0b720a0
+		gym(
+			scheme: ENV["APP_SCHEME"],
+        	export_method: "app-store",
+			export_options: {
+            	provisioningProfiles: { 
+                	ENV["APP_BUNDLE"] => 45849eec-f3f1-475b-a104-69c5b0b720a0
                 }
             }
         )
