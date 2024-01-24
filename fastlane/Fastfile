@@ -18,7 +18,10 @@ platform :ios do
             type: "appstore"
         )
 
-        disable_automatic_code_signing
+        update_code_signing_settings(
+          use_automatic_signing: false,
+          path: "demo-project/demo/demo.xcodeproj"
+        )
 
         profile_path = lane_context[SharedValues::SIGH_PROFILE_PATH]
         UI.message("Путь к профилю подписи: #{profile_path}")
