@@ -12,14 +12,14 @@ platform :ios do
             is_key_content_base64: true,
             in_house: false #boolean value if team is Enterprise or not
         )
-
-        cert
-        sigh(force: true)
         
         match(
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
             type: "appstore"
         )
+
+        cert
+        sigh(force: true)
 
         disable_automatic_code_signing
 
