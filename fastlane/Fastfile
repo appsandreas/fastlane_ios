@@ -19,8 +19,10 @@ platform :ios do
             type: "appstore"
         )
         
+        profile_path = lane_context[SharedValues::SIGH_PROFILE_PATH]
         # Обновление проекта с новым профилем
         update_project_provisioning(
+            profile: profile_path, # Путь к загруженному профилю подписи
             target_filter: '.*', # Фильтр целей проекта, к которым будет применена подпись
             build_configuration: 'Release' # Настройка сборки, для которой будет использоваться профиль
         )
