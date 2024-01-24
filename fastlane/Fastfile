@@ -18,9 +18,6 @@ platform :ios do
             type: "appstore"
         )
 
-        cert
-        sigh(force: true)
-
         disable_automatic_code_signing
 
         profile_path = lane_context[SharedValues::SIGH_PROFILE_PATH]
