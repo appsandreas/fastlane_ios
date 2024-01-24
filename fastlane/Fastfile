@@ -46,7 +46,7 @@ platform :ios do
             clean: true,
             scheme: ENV["APP_SCHEME"],
             export_method: "app-store",
-            export_xcargs: "-allowProvisioningUpdates"
+            xcargs: "-allowProvisioningUpdates"
         )
         
         upload_to_app_store(
