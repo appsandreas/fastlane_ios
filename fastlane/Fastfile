@@ -15,7 +15,8 @@ platform :ios do
         
         match(
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
-            type: "appstore"
+            type: "appstore",
+            verbose: true
         )
 
         cocoapods
@@ -24,8 +25,7 @@ platform :ios do
 
         gym(
             export_method: "app-store",
-            xcargs: "-allowProvisioningUpdates",
-            verbose: true
+            xcargs: "-allowProvisioningUpdates"
         )
     end
 end
