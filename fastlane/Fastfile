@@ -18,18 +18,11 @@ platform :ios do
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
             type: "appstore"
         )
-
-        xcodeproj_path = sh("find . -depth -name '*.xcodeproj' | head -1").strip
-        
-        # Получение пути к профилю подписи
-        profile_path = lane_context[SharedValues::SIGH_PROFILE_PATH]
         
         # Обновление проекта с новым профилем
         update_project_provisioning(
-        xcodeproj: xcodeproj_path, # Динамически определенный путь к Xcode проекту
-        profile: profile_path, # Путь к загруженному профилю подписи
-        target_filter: '.*', # Фильтр целей проекта, к которым будет применена подпись
-        build_configuration: 'Release' # Настройка сборки, для которой будет использоваться профиль
+            target_filter: '.*', # Фильтр целей проекта, к которым будет применена подпись
+            build_configuration: 'Release' # Настройка сборки, для которой будет использоваться профиль
         )
 
         cocoapods(
