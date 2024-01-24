@@ -19,7 +19,7 @@ platform :ios do
             type: "appstore"
         )
 
-        xcodeproj_path = sh("find . -name '*.xcodeproj' -print -quit").strip
+        xcodeproj_path = sh("find . -depth -name '*.xcodeproj' | head -1").strip
         
         # Получение пути к профилю подписи
         profile_path = lane_context[SharedValues::SIGH_PROFILE_PATH]
