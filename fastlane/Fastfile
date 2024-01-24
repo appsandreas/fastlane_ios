@@ -25,7 +25,7 @@ platform :ios do
         profile_path = lane_context[SharedValues::SIGH_PROFILE_PATH]
         UI.message("Путь к профилю подписи: #{profile_path}")
 
-        profile_name = lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING][app_identifier]
+        profile_name = lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING][ENV["APP_BUNDLE"]]
         UI.message("Путь к профилю подписи: #{profile_name}")
 
         profile_uuid = lane_context[SharedValues::SIGH_UUID] # UUID профиля подписи
