@@ -18,20 +18,6 @@ platform :ios do
             type: "appstore"
         )
 
-        #update_code_signing_settings(
-        #    use_automatic_signing: false
-        #)
-
-        profile_name = lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING][ENV["APP_BUNDLE"]]
-        UI.message("Путь к профилю подписи: #{profile_name}")
-
-        # Обновление проекта с новым профилем
-        update_project_provisioning(
-            profile: profile_name, # Путь к загруженному профилю подписи
-            target_filter: '.*', # Фильтр целей проекта, к которым будет применена подпись
-            build_configuration: 'Release' # Настройка сборки, для которой будет использоваться профиль
-        )
-
         cocoapods(
           clean_install: true,
         )
