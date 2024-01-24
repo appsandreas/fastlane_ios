@@ -18,8 +18,13 @@ platform :ios do
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
             type: "appstore"
         )
-        
+
         profile_path = lane_context[SharedValues::SIGH_PROFILE_PATH]
+        UI.message("Путь к профилю подписи: #{profile_path}")
+
+        profile_uuid = lane_context[SharedValues::SIGH_UUID] # UUID профиля подписи
+        UI.message("Путь к профилю подписи: #{profile_uuid}")
+
         # Обновление проекта с новым профилем
         update_project_provisioning(
             profile: profile_path, # Путь к загруженному профилю подписи
