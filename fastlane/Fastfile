@@ -12,15 +12,22 @@ platform :ios do
             is_key_content_base64: true,
             in_house: false #boolean value if team is Enterprise or not
         )
+
+        cert
+        sigh(force: true)
         
         match(
-            force_for_new_devices: true,
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
             type: "appstore"
         )
 
+        disable_automatic_code_signing
+
         profile_path = lane_context[SharedValues::SIGH_PROFILE_PATH]
         UI.message("Путь к профилю подписи: #{profile_path}")
+
+        profile_name = lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING][app_identifier]
+        UI.message("Путь к профилю подписи: #{profile_name}")
 
         profile_uuid = lane_context[SharedValues::SIGH_UUID] # UUID профиля подписи
         UI.message("Путь к профилю подписи: #{profile_uuid}")
