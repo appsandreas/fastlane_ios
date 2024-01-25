@@ -18,6 +18,14 @@ platform :ios do
             type: "appstore"
         )
 
-        increment_build_number
+        current_version = get_version_number
+
+        latest_build_number = latest_testflight_build_number(
+            version: current_version
+        )
+
+        increment_build_number(
+            build_number: (latest_build_number + 1),
+        )
     end
 end
