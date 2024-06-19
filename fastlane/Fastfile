@@ -41,6 +41,18 @@ platform :ios do
             in_house: false #boolean value if team is Enterprise or not
         )
 
+        match(
+            git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
+            type: "appstore",
+            app_identifier: [
+                "com.screen.time.control.app",
+                "com.screen.time.control.app.LockDeviceActivityReport",
+                "com.screen.time.control.app.LockDeviceActivityMonitor",
+                "com.screen.time.control.app.LockShieldConfiguration",
+                "com.screen.time.control.app.LockShieldAction"
+            ]
+        )
+
         current_version = get_version_number(target:"LockApp")
 
         latest_build_number = latest_testflight_build_number(
