@@ -19,7 +19,14 @@ platform :ios do
         
         match(
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
-            type: "appstore"
+            type: "appstore",
+            app_identifier: [
+                "LockApp",
+                "DeviceActivityReport",
+                "DeviceActivityMonitor",
+                "ShieldConfiguration",
+                "ShieldAction"
+            ]
         )
     end
     desc "Build and Release the iOS application"
