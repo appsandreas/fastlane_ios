@@ -21,11 +21,8 @@ platform :ios do
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
             type: "appstore",
             app_identifier: [
-                "com.screen.time.control.app",
-                "com.screen.time.control.app.LockDeviceActivityReport",
-                "com.screen.time.control.app.LockDeviceActivityMonitor",
-                "com.screen.time.control.app.LockShieldConfiguration",
-                "com.screen.time.control.app.LockShieldAction"
+                "com.ziprar.unarchiver",
+                "com.ziprar.unarchiver.ShareExtension"
             ]
         )
     end
@@ -45,11 +42,8 @@ platform :ios do
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
             type: "appstore",
             app_identifier: [
-                "com.screen.time.control.app",
-                "com.screen.time.control.app.LockDeviceActivityReport",
-                "com.screen.time.control.app.LockDeviceActivityMonitor",
-                "com.screen.time.control.app.LockShieldConfiguration",
-                "com.screen.time.control.app.LockShieldAction"
+                "com.ziprar.unarchiver",
+                "com.ziprar.unarchiver.ShareExtension"
             ]
         )
 
