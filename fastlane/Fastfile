@@ -47,7 +47,7 @@ platform :ios do
             ]
         )
 
-        current_version = get_version_number(target:"LockApp")
+        current_version = get_version_number(target:"ZipExtractor")
 
         latest_build_number = latest_testflight_build_number(
             live: false
