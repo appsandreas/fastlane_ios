@@ -21,8 +21,11 @@ platform :ios do
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
             type: "appstore",
             app_identifier: [
-                "com.ziprar.unarchiver",
-                "com.ziprar.unarchiver.ShareExtension"
+                "com.screen.time.control.app",
+                "com.screen.time.control.app.LockDeviceActivityReport",
+                "com.screen.time.control.app.LockDeviceActivityMonitor",
+                "com.screen.time.control.app.LockShieldConfiguration",
+                "com.screen.time.control.app.LockShieldAction"
             ]
         )
     end
@@ -42,12 +45,15 @@ platform :ios do
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
             type: "appstore",
             app_identifier: [
-                "com.ziprar.unarchiver",
-                "com.ziprar.unarchiver.ShareExtension"
+                "com.screen.time.control.app",
+                "com.screen.time.control.app.LockDeviceActivityReport",
+                "com.screen.time.control.app.LockDeviceActivityMonitor",
+                "com.screen.time.control.app.LockShieldConfiguration",
+                "com.screen.time.control.app.LockShieldAction"
             ]
         )
 
-        current_version = get_version_number(target:"ZipExtractor")
+        current_version = get_version_number()
 
         latest_build_number = latest_testflight_build_number(
             live: false
@@ -59,8 +65,7 @@ platform :ios do
 
         gym(
             export_method: "app-store",
-            xcargs: "-allowProvisioningUpdates",
-            scheme: "ZipExtractor"
+            xcargs: "-allowProvisioningUpdates"
         )
 
         upload_to_app_store(
