@@ -19,7 +19,14 @@ platform :ios do
         
         match(
             git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
-            type: "appstore"
+            type: "appstore",
+            app_identifier: [
+                "com.screen.time.control.app",
+                "com.screen.time.control.app.LockDeviceActivityReport",
+                "com.screen.time.control.app.LockDeviceActivityMonitor",
+                "com.screen.time.control.app.LockShieldConfiguration",
+                "com.screen.time.control.app.LockShieldAction"
+            ]
         )
     end
     desc "Build and Release the iOS application"
@@ -67,6 +74,18 @@ platform :ios do
             key_content: ENV["APPLE_KEY_CONTENT"],
             is_key_content_base64: true,
             in_house: false #boolean value if team is Enterprise or not
+        )
+
+        match(
+            git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
+            type: "appstore",
+            app_identifier: [
+                "com.screen.time.control.app",
+                "com.screen.time.control.app.LockDeviceActivityReport",
+                "com.screen.time.control.app.LockDeviceActivityMonitor",
+                "com.screen.time.control.app.LockShieldConfiguration",
+                "com.screen.time.control.app.LockShieldAction"
+            ]
         )
 
         current_version = get_version_number(target: "LockApp")
