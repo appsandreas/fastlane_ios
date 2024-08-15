@@ -69,7 +69,7 @@ platform :ios do
             in_house: false #boolean value if team is Enterprise or not
         )
 
-        current_version = get_version_number
+        current_version = get_version_number(target: "LockApp")
 
         latest_build_number = latest_testflight_build_number(
             live: false
