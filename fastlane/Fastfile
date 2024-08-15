@@ -34,12 +34,7 @@ platform :ios do
             in_house: false #boolean value if team is Enterprise or not
         )
 
-        match(
-            git_url: "git@github.com:appsandreas/fastlane_sert_ios.git",
-            type: "appstore"
-        )
-
-        current_version = get_version_number()
+        current_version = get_version_number(target: "LockApp")
 
         latest_build_number = latest_testflight_build_number(
             live: false
@@ -51,7 +46,8 @@ platform :ios do
 
         gym(
             export_method: "app-store",
-            xcargs: "-allowProvisioningUpdates"
+            xcargs: "-allowProvisioningUpdates",
+            scheme: "LockApp"
         )
 
         upload_to_app_store(
@@ -87,7 +83,8 @@ platform :ios do
 
         gym(
             export_method: "app-store",
-            xcargs: "-allowProvisioningUpdates"
+            xcargs: "-allowProvisioningUpdates",
+            scheme: "LockApp"
         )
 
         upload_to_app_store(
